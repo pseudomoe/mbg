@@ -52,6 +52,12 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
+
+        .ca-box {
+            background: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body class="text-slate-900">
@@ -94,6 +100,17 @@
             <p class="text-lg text-slate-500 max-w-lg leading-relaxed border-l-4 border-yellow-500 pl-6 italic">
                 "Mengoptimalkan penyerapan anggaran 71 Triliun demi masa depan kripto Indonesia yang lebih bergizi."
             </p>
+
+            <!-- Contract Address Box -->
+            <div class="ca-box p-4 flex items-center justify-between gap-4">
+                <div class="overflow-hidden">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Contract Address (CA)</p>
+                    <p id="ca-text" class="text-xs font-mono truncate">5y1g5zKUCB2M7dD9CjDKWRd7Qhcrdt6XUdpCmDwLpump</p>
+                </div>
+                <button onclick="copyCA()" class="bg-slate-200 hover:bg-slate-300 p-3 rounded transition">
+                    <i class="fas fa-copy text-slate-600"></i>
+                </button>
+            </div>
             
             <!-- Live Budget Drain Tracker -->
             <div class="space-y-4 p-8 bg-white gov-border shadow-2xl relative overflow-hidden">
@@ -114,8 +131,8 @@
             </div>
 
             <div class="flex flex-wrap gap-4">
-                <a href="https://pump.fun" target="_blank" class="bg-[#cc0000] text-white px-10 py-5 rounded-sm font-black text-xl shadow-2xl hover:bg-red-700 transition flex items-center gap-3">
-                    SERAP TOKEN $MBG <i class="fas fa-arrow-right"></i>
+                <a href="https://pump.fun/coin/5y1g5zKUCB2M7dD9CjDKWRd7Qhcrdt6XUdpCmDwLpump" target="_blank" class="bg-[#cc0000] text-white px-10 py-5 rounded-sm font-black text-xl shadow-2xl hover:bg-red-700 transition flex items-center gap-3">
+                    BELI $MBG DI PUMP.FUN <i class="fas fa-rocket"></i>
                 </a>
                 <button class="bg-white border-2 border-slate-200 px-10 py-5 rounded-sm font-black text-xl hover:bg-slate-50 transition">
                     BACA LPJ
@@ -143,7 +160,7 @@
                     <div class="grid grid-cols-2 gap-6">
                         <div class="space-y-1">
                             <p class="text-[10px] font-bold text-slate-400">MARK-UP FEE (TAX)</p>
-                            <p class="text-3xl font-black text-red-600">2%</p>
+                            <p class="text-3xl font-black text-red-600">0%</p>
                         </div>
                         <div class="space-y-1">
                             <p class="text-[10px] font-bold text-slate-400">TRANSPARANSI</p>
@@ -195,6 +212,24 @@
                 btn.innerText = 'TERVERIFIKASI: ORDAL_0x71...';
                 btn.classList.replace('bg-[#002d5b]', 'bg-green-700');
             }, 1200);
+        }
+
+        function copyCA() {
+            const text = document.getElementById('ca-text').innerText;
+            const elem = document.createElement('textarea');
+            elem.style.position = 'fixed';
+            elem.style.left = '-9999px';
+            document.body.appendChild(elem);
+            elem.value = text;
+            elem.select();
+            document.execCommand('copy');
+            document.body.removeChild(elem);
+            
+            const btn = document.querySelector('.ca-box button');
+            btn.innerHTML = '<i class="fas fa-check text-green-600"></i>';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-copy text-slate-600"></i>';
+            }, 2000);
         }
 
         const style = document.createElement('style');
