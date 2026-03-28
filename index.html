@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MBG - Badan Gizi Nasional (Meme Branch)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Unbounded:wght@400;900&display=swap');
+        
+        :root {
+            --gov-blue: #002d5b;
+            --gov-red: #cc0000;
+            --gov-gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #fdfdfd;
+        }
+
+        .heavy-font {
+            font-family: 'Unbounded', cursive;
+        }
+
+        .gov-border {
+            border: 4px double var(--gov-gold);
+        }
+
+        .budget-bar {
+            background: linear-gradient(90deg, #cc0000 0%, #ff4d4d 100%);
+            animation: drain 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes drain {
+            0% { width: 100%; opacity: 1; }
+            90% { width: 5%; opacity: 1; }
+            100% { width: 0%; opacity: 0; }
+        }
+
+        .official-seal {
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+        }
+
+        .marquee {
+            background: var(--gov-blue);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Top News Ticker -->
+    <div class="marquee overflow-hidden">
+        <div class="whitespace-nowrap animate-[marquee_25s_linear_infinite]">
+            ⚠️ PENGUMUMAN RESMI: ANGGARAN 71 TRILIUN SEDANG DALAM PROSES PENYERAPAN DIGITAL ... HARAP TENANG INI ADALAH PROYEK STRATEGIS NASIONAL ... RAPAT KOORDINASI DI DUBAI AKAN SEGERA DIMULAI ... MENU HARI INI: SUSU DAN TELUR BLOCKCHAIN ...
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto border-b">
+        <div class="flex items-center gap-4">
+            <img src="Logo_Badan_Gizi_Nasional.svg.png" alt="Logo Badan Gizi Nasional" class="h-16 official-seal">
+            <div class="hidden md:block">
+                <span class="text-xl heavy-font font-black block leading-none">MBG</span>
+                <span class="text-[10px] uppercase tracking-tighter text-slate-500 font-bold">Makanan Bergizi Gratis</span>
+            </div>
+        </div>
+        <div class="hidden lg:flex gap-10 font-bold uppercase text-[10px] tracking-widest text-slate-400">
+            <a href="#" class="hover:text-red-600">Laporan Pertanggungjawaban</a>
+            <a href="#" class="hover:text-red-600">Rapat Kerja</a>
+            <a href="#" class="hover:text-red-600">Dinas Luar Negeri</a>
+        </div>
+        <button onclick="connectWallet()" id="walletBtn" class="bg-[#002d5b] hover:bg-red-700 text-white px-8 py-3 rounded-none border-b-4 border-yellow-600 font-bold transition-all transform hover:-translate-y-1 shadow-xl">
+            ABSENSI DINAS
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-10">
+            <div class="inline-flex items-center gap-2 bg-yellow-50 text-yellow-800 px-4 py-2 rounded-md text-[10px] font-black uppercase tracking-widest border border-yellow-200">
+                <i class="fas fa-certificate"></i> Dokumen Resmi Terverifikasi Ordal
+            </div>
+            <h1 class="text-6xl lg:text-7xl heavy-font leading-none tracking-tighter">
+                MAKANAN <br> <span class="text-[#cc0000]">BERGIZI</span> <br> GRATIS
+            </h1>
+            <p class="text-lg text-slate-500 max-w-lg leading-relaxed border-l-4 border-yellow-500 pl-6 italic">
+                "Mengoptimalkan penyerapan anggaran 71 Triliun demi masa depan kripto Indonesia yang lebih bergizi."
+            </p>
+            
+            <!-- Live Budget Drain Tracker -->
+            <div class="space-y-4 p-8 bg-white gov-border shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-2 opacity-10">
+                    <img src="Logo_Badan_Gizi_Nasional.svg.png" class="w-24">
+                </div>
+                <div class="flex justify-between font-black text-xs uppercase tracking-widest">
+                    <span>Satus Penyerapan APBN 2026</span>
+                    <span class="text-red-600">Rp 71.000.000.000.000</span>
+                </div>
+                <div class="w-full bg-slate-100 h-8 rounded-sm overflow-hidden border">
+                    <div class="budget-bar h-full"></div>
+                </div>
+                <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                    <span>STATUS: SEDANG DIKERJAKAN</span>
+                    <span>TARGET: 0% SISA</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="https://pump.fun" target="_blank" class="bg-[#cc0000] text-white px-10 py-5 rounded-sm font-black text-xl shadow-2xl hover:bg-red-700 transition flex items-center gap-3">
+                    SERAP TOKEN $MBG <i class="fas fa-arrow-right"></i>
+                </a>
+                <button class="bg-white border-2 border-slate-200 px-10 py-5 rounded-sm font-black text-xl hover:bg-slate-50 transition">
+                    BACA LPJ
+                </button>
+            </div>
+        </div>
+
+        <div class="relative group">
+            <div class="absolute -inset-4 bg-yellow-500 rounded-full blur-[100px] opacity-10"></div>
+            <div class="bg-white p-10 border-4 border-[#002d5b] shadow-[20px_20px_0px_#c5a059] relative z-10">
+                <div class="flex justify-between items-center mb-10 border-b pb-6">
+                    <img src="Logo_Badan_Gizi_Nasional.svg.png" class="h-12">
+                    <div class="text-right">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase">Salinan Dokumen</p>
+                        <p class="font-black text-sm">SURAT PERINTAH KERJA</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="p-6 bg-slate-50 border-l-4 border-red-600">
+                        <p class="text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">Agenda Utama:</p>
+                        <p class="text-2xl font-black italic text-slate-800">RAPAT KOORDINASI STRATEGIS (DUBAI)</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-1">
+                            <p class="text-[10px] font-bold text-slate-400">MARK-UP FEE (TAX)</p>
+                            <p class="text-3xl font-black text-red-600">2%</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-[10px] font-bold text-slate-400">TRANSPARANSI</p>
+                            <p class="text-3xl font-black text-[#002d5b]">BLOCKCHAIN</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t">
+                        <div class="flex items-center gap-4 grayscale opacity-30">
+                            <div class="w-12 h-12 bg-slate-200 rounded-full"></div>
+                            <div class="space-y-2 flex-1">
+                                <div class="h-2 w-full bg-slate-200 rounded"></div>
+                                <div class="h-2 w-1/2 bg-slate-200 rounded"></div>
+                            </div>
+                        </div>
+                        <p class="text-center text-[8px] font-mono text-slate-400 mt-4 italic">Ditandatangani secara digital oleh Smart Contract Solana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="bg-[#002d5b] text-white py-20 px-6 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-10">
+            <img src="Logo_Badan_Gizi_Nasional.svg.png" class="h-24 brightness-0 invert opacity-50">
+            <div class="text-center space-y-4">
+                <h3 class="heavy-font text-2xl">BADAN GIZI NASIONAL (MEME BRANCH)</h3>
+                <p class="text-blue-300 text-xs tracking-widest uppercase">Membangun Negeri Melalui Likuiditas</p>
+            </div>
+            <div class="flex gap-10 font-bold text-xs tracking-widest">
+                <a href="#" class="hover:text-yellow-400 transition">TWITTER (X)</a>
+                <a href="#" class="hover:text-yellow-400 transition">TELEGRAM</a>
+                <a href="#" class="hover:text-yellow-400 transition">DEXSCREENER</a>
+            </div>
+            <div class="max-w-2xl text-center text-[10px] text-blue-400/50 uppercase leading-loose border-t border-blue-900 pt-10">
+                Disclaimer: $MBG adalah token hiburan parodi. Kami tidak berafiliasi secara hukum dengan instansi pemerintah manapun. Token ini dibuat untuk tujuan komedi dan kritik sosial. Membeli $MBG berarti Anda setuju untuk menyerap anggaran pribadi Anda ke dalam bonding curve Solana.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function connectWallet() {
+            const btn = document.getElementById('walletBtn');
+            btn.innerText = 'MEMVERIFIKASI NIK...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'TERVERIFIKASI: ORDAL_0x71...';
+                btn.classList.replace('bg-[#002d5b]', 'bg-green-700');
+            }, 1200);
+        }
+
+        // Add CSS for marquee animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes marquee {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
